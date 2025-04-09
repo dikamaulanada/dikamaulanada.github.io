@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akademi Crypto</title>
+  <link rel="icon" href="logo.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4B0082">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="auth-box" id="authBox">
+        <h2>Masukkan Kode Akses</h2>
+        <input type="password" id="accessCode" placeholder="Kode rahasia..." />
+        <br><br>
+        <button onclick="validateCode()"><i class="fas fa-lock-open"></i> Masuk</button>
+    </div>
+
+    <div class="container hidden" id="mainContent">
+        <div class="header">
+            <h1>APLIKASI AKADEMI CRYPTO</h1>
+        </div>
+        
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Cari modul..." oninput="searchCourses()">
+        </div>
+        
+        <div class="menu-container">
+            <div class="menu-scroll" id="menuScroll">
+                <button class="menu-btn active" onclick="showCategory('all')"><i class="fas fa-globe"></i> Semua</button>
+                <button class="menu-btn" onclick="showCategory('investing')"><i class="fas fa-chart-line"></i> Investing</button>
+                <button class="menu-btn" onclick="showCategory('trading')"><i class="fas fa-exchange-alt"></i> Trading</button>
+                <button class="menu-btn" onclick="showCategory('blockchain')"><i class="fas fa-link"></i> Blockchain</button>
+                <button class="menu-btn" onclick="showCategory('sekolah')"><i class="fas fa-graduation-cap"></i> Ekonomi</button>
+                <button class="menu-btn" onclick="showCategory('liveclass')"><i class="fas fa-video"></i> Liveclass</button>
+                <button class="menu-btn" onclick="showCategory('margincall')"><i class="fas fa-user-secret"></i> Privat</button>
+                <button class="menu-btn" onclick="showCategory('ebook')"><i class="fas fa-book"></i> Ebook</button>
+                <button class="menu-btn" onclick="showCategory('thevoice')"><i class="fas fa-podcast"></i> The Voice</button>
+                <button class="menu-btn" onclick="showCategory('research')"><i class="fas fa-file-alt"></i> Research</button>
+                <button class="menu-btn" onclick="showCategory('miror')"><i class="fas fa-users"></i> Komunitas</button>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 id="section-title">SEMUA MODUL</h2>
+            <div id="courses"></div>
+        </div>
+        
+        <div class="footer">
+            © 2024 Akademi Crypto | All Rights Reserved
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('Service Worker Registered'))
+          .catch(err => console.log('Service Worker Failed', err));
+      }
+    </script>
+</body>
+</html>

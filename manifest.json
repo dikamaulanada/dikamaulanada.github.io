@@ -1,0 +1,21 @@
+{
+  "name": "Akademi Crypto",
+  "short_name": "AkademiCrypto",
+  "description": "Aplikasi pembelajaran crypto terbaik",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#4B0082",
+  "icons": [
+    {
+      "src": "images/logo-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logo-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
