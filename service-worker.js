@@ -1,24 +1,24 @@
-const CACHE_NAME = 'akademi-crypto-v1';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/script.js',
-  '/images/logo.png',
-  '/images/logo-192x192.png',
-  '/images/logo-512x512.png'
-];
-
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open('akademi-crypto-cache').then((cache) => {
+      return cache.addAll([
+        '/test/',
+        '/test/index.html',
+        '/test/styles.css',
+        '/test/script.js',
+        '/test/manifest.json',
+        '/test/images/logo.png',
+        '/test/images/logo-192x192.png',
+        '/test/images/logo-512x512.png'
+      ]);
+    })
   );
 });
 
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => response || fetch(event.request))
+self.addEventListener('fetch', (e) => {
+  e.respondWith(
+    caches.match(e.request).then((response) => {
+      return response || fetch(e.request);
+    })
   );
 });
