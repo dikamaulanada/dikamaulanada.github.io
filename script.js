@@ -811,9 +811,15 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-        .then(reg => console.log("Service Worker Registered"))
-        .catch(err => console.error("Service Worker Failed:", err));
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then((reg) => {
+        console.log('Service Worker Registered', reg);
+      }).catch((err) => {
+        console.log('Service Worker Failed', err);
+      });
+  });
 }
+
 
 console.log('Website Akademi Crypto Berjalan!');
