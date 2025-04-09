@@ -1,7 +1,7 @@
 {
   "name": "Akademi Crypto",
-  "short_name": "AkademiCrypto",
-  "start_url": "/test/",
+  "short_name": "Akademi Crypto",
+  "start_url": "https://dikamaulanada.github.io/test/",
   "display": "standalone",
   "background_color": "#121212",
   "theme_color": "#4B0082",
